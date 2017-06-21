@@ -1,7 +1,7 @@
 # domJS
 domJS is an extension of the native API of DOM to manipulate the DOM elements in an easy, simple and efficient way
 
-## compatibility
+## Compatibility
 is compatible with IE9+,IE Edge, FF3.5+, Chrome4+, opera 10.1+ All opera mini, Safari3.1+, Android browser2.1+ and ALL recent browsers
 
 ## Table of contents
@@ -44,7 +44,7 @@ is compatible with IE9+,IE Edge, FF3.5+, Chrome4+, opera 10.1+ All opera mini, S
 - [ajax](#ajax)
 - [is_array](#is_array)
 - [is_object](#is_object)
-- [links](#links)
+- [Links](#Links)
 - [License](#License)
 
 <!-- tocstop -->
@@ -357,13 +357,13 @@ var check_object = dom.is_object(object);
 // true
 ```
 
-# links
+# Links
 * [Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 
 
 # License
 
-MIT - [Typicode](https://github.com/said10/)
+MIT - [Said10](https://github.com/said10/)
 
 
 
