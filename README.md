@@ -44,6 +44,8 @@ is compatible with IE9+,IE Edge, FF3.5+, Chrome4+, opera 10.1+ All opera mini, S
 - [ajax](#ajax)
 - [is_array](#is_array)
 - [is_object](#is_object)
+- [links](#links)
+- [License](#License)
 
 <!-- tocstop -->
 
@@ -361,7 +363,7 @@ var check_object = dom.is_object(object);
 
 # License
 
-MIT - [Typicode](https://github.com/typicode)
+MIT - [Typicode](https://github.com/said10/)
 
 
 
