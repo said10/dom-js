@@ -1,7 +1,55 @@
 # domJS
-JS library to manipulate the DOM in an easy and efficient way
+domJS is an extension of the native API of DOM to manipulate the DOM elements in an easy, simple and efficient way
 
-# load
+## compatibility
+is compatible avec IE9+,IE Edge, FF3.5+, Chrome4+, opera 10.1+ All opera mini, Safari3.1+, Android browser2.1+ and ALL recent browsers
+
+## Table of contents
+<details>
+
+<!-- toc -->
+
+- [load](#load)
+- [get](#get)
+- [getAll](#getAll)
+- [getParent](#getParent)
+- [appendTo](#appendTo)
+- [remove](#remove)
+- [html](#html)
+- [find](#find)
+- [findAll](#findAll)
+- [attr](#attr)
+- [setAttr](#setAttr)
+- [before](#before)
+- [after](#after)
+- [addClass](#addClass)
+- [removeClass](#removeClass)
+- [hasClass](#hasClass)
+- [on](#on)
+- [off](#off)
+- [serialize](#serialize)
+- [eq](#license)
+- [val](#val)
+- [first](#first)
+- [last](#last)
+- [css](#css)
+- [offset](#offset)
+- [prependTo](#prependTo)
+- [closestTo](#closestTo)
+- [isCss](#isCss)
+- [next](#next)
+- [prev](#prev)
+- [wrap](#wrap)
+- [convertBase64](#convertBase64)
+- [ajax](#ajax)
+- [is_array](#is_array)
+- [is_object](#is_object)
+
+<!-- tocstop -->
+
+</details>
+
+## load
 The load event occurs when DOM Object has been loaded
 ```
 dom.load(function() {
@@ -9,14 +57,14 @@ dom.load(function() {
 }):
 ```
 
-# get
+## get
 Return the first Element within the document that matches the specified selector
 
 ```
 var container = dom.get("#container");
 // <div id='container'>
 ```
-# getAll
+## getAll
 Returns All Elements within the document that matches the specified selector
 
 ```
@@ -24,7 +72,7 @@ var container = dom.getAll(".col-10");
 // [<div class='col-10'>, <div class='col-10'>, <div class='col-10'>]
 ```
 
-# getParent
+## getParent
 Returns the DOM node's parent Element
 
 ```
@@ -32,28 +80,28 @@ var parent = container.getParent();
 // <body>
 ```
 
-# appendTo
+## appendTo
 add a node to the end of the list of children of a Element
 
 ```
 container.appendTo("<h1>Title</h1>");
 ```
 
-# remove
+## remove
 remove the Element from the DOM
 
 ```
 container.remove();
 ```
 
-# html
+## html
 sets or gets the HTML syntax describing the element's descendants
 
 ```
 container.html('<span>text lorem ipsum</span>');
 ```
 
-# find
+## find
 Return the first Element within the Element that matches the specified selector
 
 ```
@@ -61,7 +109,7 @@ container.find('span');
 // <span>
 ```
 
-# findAll
+## findAll
 Return All Elements within the Element that matches the specified selector
 
 ```
@@ -69,7 +117,7 @@ container.findAll('.span');
 // [<span class='span'>, <span class='span'>, <span class='span'>]
 ```
 
-# attr
+## attr
 get the value of an attribute on the specified element
 
 ```
@@ -77,7 +125,7 @@ container.attr('id');
 // container
 ```
 
-# setAttr
+## setAttr
 set the value of an attribute on the specified element
 
 ```
@@ -85,35 +133,35 @@ var logo = dom.get("#logo")
 logo.setAttr('alt', 'domJS');
 ```
 
-# before
+## before
 inserts a set of Node or DOMString objects in the children list of this ChildNode's parent,  just before this ChildNode.
 
 ```
 container.before('<h1>Title of page</h1>');
 ```
 
-# after
+## after
 inserts a set of Node or DOMString objects in the children list of this ChildNode's parent,  just after this ChildNode.
 
 ```
 container.after('<h2>Lorem ipsum</h2>');
 ```
 
-# addClass
+## addClass
 Adds the specified class(es) to Element
 
 ```
 container.addClass('col-12 center-auto');
 ```
 
-# removeClass
+## removeClass
 Remove the specified class(es) to Element
 
 ```
 container.removeClass('col-12 center-auto');
 ```
 
-# hasClass
+## hasClass
 Determine whether any of the matched elements are assigned the given classe.
 
 ```
@@ -121,7 +169,7 @@ container.hasClass('container');
 // true
 ```
 
-# on
+## on
 Attach an event handler function for one event to the selected elements.
 Type of event accept all the events of mouse & keyboard exemple :  click, load, keypress, ...
 
@@ -132,7 +180,7 @@ container.on('click', function(event) {
 });
 ```
 
-# off
+## off
 remove an event handler for one event to the selected elements.
 
 ```
@@ -147,7 +195,7 @@ container.off('click', function(event) {
 ```
 
 
-# serialize
+## serialize
 Encode a set of form elements as a multiple format for submission.
 
 ```
@@ -157,7 +205,7 @@ form.serialize("array") // return form encoded en array
 form.serialize("object") // return form encoded en object
 
 ```
-# eq
+## eq
 Get the Element in NodeList by index
 
 ```
@@ -165,7 +213,7 @@ var input = dom.getAll("input[type='text']").eq(0);
 // <input name="input_0" />
 ```
 
-# val
+## val
 Get the current value of the inputs elements
 
 ```
@@ -174,7 +222,7 @@ input.val();
 
 ```
 
-# first
+## first
 Get the first Element in NodeList
 
 ```
@@ -183,7 +231,7 @@ var input = dom.getAll("input[type='text']").first();
 
 ```
 
-# last
+## last
 Get the last Element in NodeList
 
 ```
@@ -192,7 +240,7 @@ var input = dom.getAll("input[type='text']").last();
 
 ```
 
-# css
+## css
 set one or more CSS properties for matched element.
 
 ```
@@ -200,7 +248,7 @@ container.css({ "background-color" : "#ff0000", "font-size" : "25px", "color" : 
 
 ```
 
-# offset
+## offset
 Get the current coordinates of the element (top, left, width, height)
 
 ```
@@ -208,14 +256,14 @@ container.offset();
 // { top ; 10, left : 10, width : 960, height : 700 }
 ```
 
-# prependTo
+## prependTo
 Insert content to the beginning of Element
 
 ```
 container.prependTo('<span>date of publication : 20/06/2017</span>');
 ```
 
-# closestTo
+## closestTo
 get the first parent element that matches the selector
 
 ```
@@ -224,7 +272,7 @@ span.closestTo('#container');
 // <div id="container">
 ```
 
-# isCss
+## isCss
 Check if arguments matched with the style CSS of Element and return true/false
 
 ```
@@ -233,7 +281,7 @@ span.isCss("color=red");
 // false or true
 ```
 
-# next
+## next
 get the next Element of this DOMNode
 
 ```
@@ -241,7 +289,7 @@ var span_next = span.next();
 // <p>
 ```
 
-# prev
+## prev
 get the prev Element of this DOMNode
 
 ```
@@ -249,7 +297,7 @@ var span_prev = span.prev();
 // <span>
 ```
 
-# wrap
+## wrap
 Wrap an HTML structure around each element in the set of matched elements.
 
 ```
@@ -258,7 +306,7 @@ li_menu.wrap("<ul class='block-display'>");
 // <ul class="block-display">
 ```
 
-# convertBase64
+## convertBase64
 get Base64 of file uploaded by the user in input File
 
 ```
@@ -268,7 +316,7 @@ input_logo.convertBase64(function(bse64) {
 });
 ```
 
-# ajax
+## ajax
 Execute the requests HTTP to server by AJAX methode
 
 ```
@@ -289,7 +337,7 @@ dom.ajax({
 });
 ```
 
-# is_array
+## is_array
 methode for verify if the variable is the Array type or not
 
 ```
@@ -298,7 +346,7 @@ var check_array = dom.is_array(list);
 // true
 ```
 
-# is_object
+## is_object
 methode for verify if the variable is the Object type or not
 
 ```
@@ -307,6 +355,13 @@ var check_object = dom.is_object(object);
 // true
 ```
 
+# links
+* [Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+
+
+# License
+
+MIT - [Typicode](https://github.com/typicode)
 
 
 

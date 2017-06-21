@@ -515,15 +515,24 @@
             }
             request.onreadystatechange = function(event) {
                 if (this.readyState === XMLHttpRequest.DONE) {
-                    if (this.status === 200) {
-                        params.success.call(this, this.response, event);
+                    if (this.status === 200 || this.status === 201) {
+                         var response = this.response;
+                        if (typeof this.response === "string") {
+                            try {
+                               response = JSON.parse(this.response);         // null
+                            }
+                            catch (e) {
+                            // console.log(e);
+                            }
+                        }
+                    params.success.call(this, response, this.status, event, this);
                     } 
                     else {
-                        params.error.call(this, this.status, this.statusText, event);
+                        params.error.call(this, this.status, this.statusText, event, this);
                     }
                 }
             }; 
-            var mime_type = params.mimeType || 'text/xml';
+            var mime_type = params.mimeType || 'application/json';
             request.overrideMimeType(mime_type);
             var url_send = params.url;
             if (typeof params.cache !== "undefined" && params.cache === true) {
@@ -537,7 +546,7 @@
             request.open(params.type, url_send, async);
             request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             request.setRequestHeader('Content-Type', 'application/json');
-            request.setRequestHeader('Accept', 'application/json');
+            request.setRequestHeader('Accept', 'application/json, text/javascript');
             //xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'))
             var headers = params.headers;
             if (typeof headers !== "undefined" && dom.is_object(headers)) {
