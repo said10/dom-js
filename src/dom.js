@@ -380,6 +380,25 @@
             }
         }
     };
+    /**
+	 * Show Element DOM
+	 * @show
+	 */
+    Element.prototype.show = function() {
+        if (this.tagName === "A" || this.tagName === "SPAN" || this.tagName === "STRONG" || this.tagName === "IMG" || this.tagName === "EM" ||this.tagName === "BUTTON" || this.tagName === "INPUT" || this.tagName === "LABEL" || this.tagName === "SELECT" || this.tagName === "TEXTAREA") {
+                this.css({ "display" : "inline-block" });
+        }
+        else {
+            this.css({ "display" : "block" });
+        } 
+    };
+    /**
+	 * Hide Element DOM
+	 * @hide
+	 */
+    Element.prototype.hide = function() {
+        this.css({ "display" : "hide" });
+    };
     NodeList.prototype.css = function(object_css) {
         var l = this.length;
         for (var i = 0; i < l; i++) {
