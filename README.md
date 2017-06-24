@@ -33,6 +33,8 @@ is compatible with IE9+,IE Edge, FF3.5+, Chrome4+, opera 10.1+ All opera mini, S
 - [first](#first)
 - [last](#last)
 - [css](#css)
+- [show](#show)
+- [hide](#hide)
 - [offset](#offset)
 - [prependTo](#prependTo)
 - [closestTo](#closestTo)
@@ -247,6 +249,22 @@ set one or more CSS properties for matched element.
 
 ```
 container.css({ "background-color" : "#ff0000", "font-size" : "25px", "color" : "#ccc" });
+
+```
+
+## show
+Show Element
+
+```
+container.show();
+
+```
+
+## hide
+Hide Element
+
+```
+container.hide();
 
 ```
 
