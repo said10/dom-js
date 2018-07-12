@@ -1,0 +1,1 @@
+DomJS is an extension of the DOM native API to manipulate DOM elements in an easy, simple and efficient way, the advantage that I get to use it is a performance page loading page And also on the loading of the object on the memory since it weighed only <8k, the objective is to replace the old libraries and contunier to add other functions provided that it does not exceed < 15k
