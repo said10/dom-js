@@ -675,7 +675,7 @@
             wrapper.appendChild(element);
         }
     };
-    class Base64 {
+    /*class Base64 {
         constructor() { }
         convert(input, callback) {
           var selectedFile = input.files[0];
@@ -683,7 +683,7 @@
               callback.call(input, base64);
           });
         }
-    }
+    }*/
     /**
 	 * get Base64 of file uploaded by the user in input File
 	 * @convertBase64
@@ -768,11 +768,22 @@
             else {
                 request = new ActiveXObject("Microsoft.XMLHTTP");
             }
+            
+            var async = params.async;
+            if (typeof async === "undefined" || async === true) {
+                async = true; 
+            }
+            
+            if (params.hasOwnProperty("dataType") === false) {
+                params.dataType = "json";
+            }
+            
+            request.dataType = params.dataType;
             request.onreadystatechange = function(event) {
-                if (this.readyState === XMLHttpRequest.DONE || ActiveXObject.DONE) {
+                if (this.readyState === XMLHttpRequest.DONE) {
                     if (this.status === 200 || this.status === 201) {
                          var response = this.response;
-                        if (typeof this.response === "string" && request.responseType === "json") {
+                        if (typeof this.response === "string" && request.dataType === "json") {
                             try {
                                response = JSON.parse(this.response);         // null
                             }
@@ -794,11 +805,7 @@
             if (typeof params.cache !== "undefined" && params.cache === true) {
                 url_send = params.url +  bustCache;
             }
-            var async = params.async;
-            if (typeof async === "undefined" || async === true) {
-                async = true;
-                request.responseType = params.dataType || 'json';
-            }
+            
             request.open(params.type, url_send, async);
             request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             request.setRequestHeader('Content-Type', 'application/json');
