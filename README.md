@@ -1,5 +1,5 @@
 # dom-js
-domJS is an extension of the native API of DOM to manipulate the DOM elements in an easy, simple and efficient way
+dom-js is an extension of the native API of DOM to manipulate the DOM elements in an easy, simple and efficient way
 
 ## Compatibility
 is compatible with IE9+,IE Edge, FF3.5+, Chrome4+, opera 10.1+ All opera mini, Safari3.1+, Android browser2.1+ and ALL recent browsers
