@@ -1,4 +1,4 @@
-# domJS
+# dom-js
 domJS is an extension of the native API of DOM to manipulate the DOM elements in an easy, simple and efficient way
 
 ## Compatibility
